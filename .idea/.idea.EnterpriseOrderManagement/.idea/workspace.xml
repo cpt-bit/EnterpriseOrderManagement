@@ -17,21 +17,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="417fd2b6-905b-41e9-a75c-ebf120c4a962" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EnterpriseOrderManagement.slnx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/.idea.EnterpriseOrderManagement/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/.idea.EnterpriseOrderManagement/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/OrderProcessing.Tests/OrderProcessing.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/OrderProcessing.Tests/OrderProcessorTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/.idea.EnterpriseOrderManagement/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EnterpriseOrderManagement.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderProcessing.API.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderProcessing.API.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnterpriseOrderManagement.sln" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/EnterpriseOrderManagement.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderProcessing.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessing.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderProcessing.API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessing.API.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,23 +54,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000109996" />
-      <entry key="MS500" value="1.023271362375656" />
-      <entry key="S2" value="3.0546692382875835" />
-      <entry key="S5" value="6.277769029973054" />
-      <entry key="S10" value="8.257325220766724" />
-      <entry key="S30" value="9.984459573327825" />
-      <entry key="S60" value="10.478364800509745" />
-      <entry key="M2" value="10.735627429373267" />
-      <entry key="M5" value="10.912050797254322" />
-      <entry key="M10" value="11.222626274326242" />
-      <entry key="M15" value="11.743929311981457" />
-      <entry key="M30" value="13.716256477473447" />
-      <entry key="H1" value="16.727646860996245" />
-      <entry key="H2" value="19.553210230243565" />
-      <entry key="H4" value="21.522421871636897" />
-      <entry key="D1" value="23.546269952713192" />
-      <entry key="W1" value="23.934101392483633" />
+      <entry key="MS100" value="1.475937795223518" />
+      <entry key="MS500" value="2.512097914515043" />
+      <entry key="S2" value="3.836386108001568" />
+      <entry key="S5" value="4.859956587761735" />
+      <entry key="S10" value="5.3697385060506955" />
+      <entry key="S30" value="5.7748114123493455" />
+      <entry key="S60" value="5.885399557345822" />
+      <entry key="M2" value="5.942188898235877" />
+      <entry key="M5" value="5.97835426340195" />
+      <entry key="M10" value="6.1243569974727885" />
+      <entry key="M15" value="6.611835383678086" />
+      <entry key="M30" value="9.146659043982874" />
+      <entry key="H1" value="14.015019982700611" />
+      <entry key="H2" value="19.535503521493197" />
+      <entry key="H4" value="23.907011753135592" />
+      <entry key="D1" value="28.835535784796328" />
+      <entry key="W1" value="29.82953548870572" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -86,23 +92,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9726549474229794" />
-      <entry key="MS500" value="1.0175711289132776" />
-      <entry key="S2" value="3.0493076324766335" />
-      <entry key="S5" value="6.273079453822377" />
-      <entry key="S10" value="8.254192933785802" />
-      <entry key="S30" value="9.983185623325141" />
-      <entry key="S60" value="10.477694900497564" />
-      <entry key="M2" value="10.735283388373686" />
-      <entry key="M5" value="10.911394027142617" />
-      <entry key="M10" value="11.217888103363254" />
-      <entry key="M15" value="11.73508445258481" />
-      <entry key="M30" value="13.703259754255189" />
-      <entry key="H1" value="16.716322155967855" />
-      <entry key="H2" value="19.545706702376417" />
-      <entry key="H4" value="21.518099047137945" />
-      <entry key="D1" value="23.545458821650765" />
-      <entry key="W1" value="23.93398313324701" />
+      <entry key="MS100" value="1.3275463602447626" />
+      <entry key="MS500" value="2.4186992688528424" />
+      <entry key="S2" value="3.803641418879104" />
+      <entry key="S5" value="4.8453860120498025" />
+      <entry key="S10" value="5.362135602504333" />
+      <entry key="S30" value="5.772197376514514" />
+      <entry key="S60" value="5.884081922015078" />
+      <entry key="M2" value="5.941527374152854" />
+      <entry key="M5" value="5.978088900967148" />
+      <entry key="M10" value="6.124166834790745" />
+      <entry key="M15" value="6.611280213978175" />
+      <entry key="M30" value="9.143629499207776" />
+      <entry key="H1" value="14.00957031692711" />
+      <entry key="H2" value="19.530297840143167" />
+      <entry key="H4" value="23.903409458517682" />
+      <entry key="D1" value="28.834748212003763" />
+      <entry key="W1" value="29.82941761427701" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
