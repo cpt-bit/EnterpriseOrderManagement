@@ -1,6 +1,5 @@
 namespace OrderProcessing.API;
 
-// C# 12 Record with Primary Constructor
 public record Order(int Id, string CustomerName, decimal Amount);
 
 public interface IOrderRepository
@@ -9,7 +8,6 @@ public interface IOrderRepository
     Task<IEnumerable<Order>> GetAllAsync();
 }
 
-// C# 12 Primary Constructor + Collection Expression []
 public class InMemoryOrderRepository() : IOrderRepository
 {
     private readonly List<Order> _orders = 
@@ -25,7 +23,6 @@ public class InMemoryOrderRepository() : IOrderRepository
         Task.FromResult(_orders.AsEnumerable());
 }
 
-// C# 12 Primary Constructor for Dependency Injection
 public class OrderProcessor(IOrderRepository repository, ILogger<OrderProcessor> logger)
 {
     public async Task<Order?> ProcessOrderAsync(int id)

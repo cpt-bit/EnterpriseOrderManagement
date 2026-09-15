@@ -2,17 +2,14 @@ using OrderProcessing.API;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// API Documentation Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Dependency Injection Registrations
 builder.Services.AddSingleton<IOrderRepository, InMemoryOrderRepository>();
 builder.Services.AddScoped<OrderProcessor>();
 
 var app = builder.Build();
 
-// HTTP Request Pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -21,7 +18,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// API Routing
 app.MapGet("/orders/{id:int}", async (int id, OrderProcessor processor) =>
 {
     var order = await processor.ProcessOrderAsync(id);
