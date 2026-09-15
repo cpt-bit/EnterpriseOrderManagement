@@ -84,4 +84,22 @@ public class OrderProcessorTests()
             Arg.Any<Exception>(),
             Arg.Any<Func<object, Exception?, string>>());
     }
+    [Fact]
+    public async Task ApplyDiscountAsync_WhenOrderExists_CalculatesDiscountAndSaves()
+    {
+        // Arrange
+        var initialOrder = new Order(1, "Acme Corp", 1000m);
+        _repository.GetByIdAsync(1).Returns(initialOrder);
+
+        var sut = new OrderProcessor(_repository, _logger);
+
+        // Act
+        var result = await sut.ApplyDiscountAsync(1, 20m); // 20% off 1000 = €800
+
+        // Assert
+        result.Should().BeTrue();
+
+        // Verify SaveAsync received an Order object with Amount == €800
+        await _repository.Received(1).SaveAsync(Arg.Is<Order>(o => o.Amount == 800m && o.Id == 1));
+    }
 }

@@ -17,28 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="417fd2b6-905b-41e9-a75c-ebf120c4a962" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EnterpriseOrderManagement.slnx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/.idea.EnterpriseOrderManagement/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/.idea.EnterpriseOrderManagement/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/OrderProcessing.Tests/OrderProcessing.Tests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/OrderProcessing.Tests/OrderProcessorTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/.idea.EnterpriseOrderManagement/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/.idea/config/applicationhost.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EnterpriseOrderManagement.sln" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/EnterpriseOrderManagement.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderProcessing.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessing.API.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderProcessing.API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessing.API.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EnterpriseOrderManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/OrderProcessing.Tests/OrderProcessorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/OrderProcessing.Tests/OrderProcessorTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,29 +29,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessor.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.475937795223518" />
-      <entry key="MS500" value="2.512097914515043" />
-      <entry key="S2" value="3.836386108001568" />
-      <entry key="S5" value="4.859956587761735" />
-      <entry key="S10" value="5.3697385060506955" />
-      <entry key="S30" value="5.7748114123493455" />
-      <entry key="S60" value="5.885399557345822" />
-      <entry key="M2" value="5.942188898235877" />
-      <entry key="M5" value="5.97835426340195" />
-      <entry key="M10" value="6.1243569974727885" />
-      <entry key="M15" value="6.611835383678086" />
-      <entry key="M30" value="9.146659043982874" />
-      <entry key="H1" value="14.015019982700611" />
-      <entry key="H2" value="19.535503521493197" />
-      <entry key="H4" value="23.907011753135592" />
-      <entry key="D1" value="28.835535784796328" />
-      <entry key="W1" value="29.82953548870572" />
+      <entry key="MS100" value="1.3672673610479973" />
+      <entry key="MS500" value="3.959704111227426" />
+      <entry key="S2" value="7.5081773235103615" />
+      <entry key="S5" value="8.874488638666746" />
+      <entry key="S10" value="9.41292297333836" />
+      <entry key="S30" value="9.798605345294106" />
+      <entry key="S60" value="9.898570395266672" />
+      <entry key="M2" value="9.949321845798265" />
+      <entry key="M5" value="10.108639189599737" />
+      <entry key="M10" value="11.099351335886261" />
+      <entry key="M15" value="12.426780382747838" />
+      <entry key="M30" value="16.608283420951373" />
+      <entry key="H1" value="24.028231043958023" />
+      <entry key="H2" value="33.61217532532019" />
+      <entry key="H4" value="42.29046730867978" />
+      <entry key="D1" value="53.236906575885136" />
+      <entry key="W1" value="55.591346850526186" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -92,59 +76,59 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3275463602447626" />
-      <entry key="MS500" value="2.4186992688528424" />
-      <entry key="S2" value="3.803641418879104" />
-      <entry key="S5" value="4.8453860120498025" />
-      <entry key="S10" value="5.362135602504333" />
-      <entry key="S30" value="5.772197376514514" />
-      <entry key="S60" value="5.884081922015078" />
-      <entry key="M2" value="5.941527374152854" />
-      <entry key="M5" value="5.978088900967148" />
-      <entry key="M10" value="6.124166834790745" />
-      <entry key="M15" value="6.611280213978175" />
-      <entry key="M30" value="9.143629499207776" />
-      <entry key="H1" value="14.00957031692711" />
-      <entry key="H2" value="19.530297840143167" />
-      <entry key="H4" value="23.903409458517682" />
-      <entry key="D1" value="28.834748212003763" />
-      <entry key="W1" value="29.82941761427701" />
+      <entry key="MS100" value="1.309125616612142" />
+      <entry key="MS500" value="3.9102192212570546" />
+      <entry key="S2" value="7.4853114448791365" />
+      <entry key="S5" value="8.863812395678824" />
+      <entry key="S10" value="9.407286207071369" />
+      <entry key="S30" value="9.79665536015724" />
+      <entry key="S60" value="9.897586207961506" />
+      <entry key="M2" value="9.948827208866653" />
+      <entry key="M5" value="10.108389105641578" />
+      <entry key="M10" value="11.09903472318295" />
+      <entry key="M15" value="12.426409669295198" />
+      <entry key="M30" value="16.60754114252812" />
+      <entry key="H1" value="24.025999048138814" />
+      <entry key="H2" value="33.6088839965254" />
+      <entry key="H4" value="42.28758794732644" />
+      <entry key="D1" value="53.23613748830968" />
+      <entry key="W1" value="55.59122768397901" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3JMI15qzJ4rhfTdtnWYYuwP5iEq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Docker.OrderProcessing.API/Dockerfile">
     <configuration name="OrderProcessing.API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/OrderProcessing.API/OrderProcessing.API.csproj" />
@@ -206,7 +190,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
   </component>

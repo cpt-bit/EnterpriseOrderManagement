@@ -6,6 +6,7 @@ public interface IOrderRepository
 {
     Task<Order?> GetByIdAsync(int id);
     Task<IEnumerable<Order>> GetAllAsync();
+    Task SaveAsync(Order order);
 }
 
 public class InMemoryOrderRepository() : IOrderRepository
@@ -21,6 +22,21 @@ public class InMemoryOrderRepository() : IOrderRepository
 
     public Task<IEnumerable<Order>> GetAllAsync() => 
         Task.FromResult(_orders.AsEnumerable());
+    
+    public Task SaveAsync(Order order)
+    {
+        var existingIndex = _orders.FindIndex(o => o.Id == order.Id);
+        if (existingIndex >= 0)
+        {
+            _orders[existingIndex] = order;
+        }
+        else
+        {
+            _orders.Add(order);
+        }
+
+        return Task.CompletedTask;
+    }
 }
 
 public class OrderProcessor(IOrderRepository repository, ILogger<OrderProcessor> logger)
@@ -36,5 +52,19 @@ public class OrderProcessor(IOrderRepository repository, ILogger<OrderProcessor>
         }
         
         return order;
+    }
+    public async Task<bool> ApplyDiscountAsync(int id, decimal discountPercent)
+    {
+        if (discountPercent is < 0 or > 100)
+            throw new ArgumentOutOfRangeException(nameof(discountPercent), "Discount must be between 0 and 100.");
+
+        var order = await repository.GetByIdAsync(id);
+        if (order is null) return false;
+
+        var discountedAmount = order.Amount * (1 - (discountPercent / 100m));
+        var updatedOrder = order with { Amount = discountedAmount };
+
+        await repository.SaveAsync(updatedOrder);
+        return true;
     }
 }
