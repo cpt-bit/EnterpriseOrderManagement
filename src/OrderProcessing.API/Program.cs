@@ -14,6 +14,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString));
 
+
+var exCon = builder.Configuration["ExternalConfiguration"];
+Console.WriteLine(exCon);
+
 // Register EfOrderRepository to fulfill IOrderRepository
 builder.Services.AddScoped<IOrderRepository, EfOrderRepository>();
 
