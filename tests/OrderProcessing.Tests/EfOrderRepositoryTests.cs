@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using OrderProcessing.API;
+using OrderProcessing.API.Features.Orders;
 using OrderProcessing.API.Data;
 using Xunit;
 

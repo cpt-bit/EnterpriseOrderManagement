@@ -1,28 +1,10 @@
-using Microsoft.EntityFrameworkCore;
-using OrderProcessing.API;
 using OrderProcessing.API.Data;
+using OrderProcessing.API.Extensions;
+using OrderProcessing.API.Features.Orders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-// 1. Database & Repository Configuration
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
-                       ?? "Data Source=orders.db";
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(connectionString));
-
-
-var exCon = builder.Configuration["ExternalConfiguration"];
-Console.WriteLine(exCon);
-
-// Register EfOrderRepository to fulfill IOrderRepository
-builder.Services.AddScoped<IOrderRepository, EfOrderRepository>();
-
-// Register your OrderProcessor service (which consumes IOrderRepository via DI)
-builder.Services.AddScoped<OrderProcessor>();
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -39,33 +21,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// 3. Your Existing Clean Route Grouping (Unchanged)
-var ordersGroup = app.MapGroup("/api/orders");
-
-// GET /api/orders/{id}
-ordersGroup.MapGet("/{id:int}", async (int id, OrderProcessor processor) =>
-{
-    var order = await processor.ProcessOrderAsync(id);
-    return order is not null 
-        ? Results.Ok(order) 
-        : Results.NotFound($"Order {id} not found.");
-});
-
-// POST /api/orders/{id}/discount
-ordersGroup.MapPost("/{id:int}/discount", async (int id, decimal percent, OrderProcessor processor) =>
-{
-    try
-    {
-        var success = await processor.ApplyDiscountAsync(id, percent);
-        return success 
-            ? Results.NoContent() 
-            : Results.NotFound($"Order {id} not found.");
-    }
-    catch (ArgumentOutOfRangeException ex)
-    {
-        return Results.BadRequest(ex.Message);
-    }
-});
+app.MapOrderEndpoints();
 
 app.Run();
 

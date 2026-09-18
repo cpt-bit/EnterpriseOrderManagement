@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
-using OrderProcessing.API;
+using OrderProcessing.API.Features.Orders;
 using Xunit;
 
 namespace OrderProcessing.Tests;
