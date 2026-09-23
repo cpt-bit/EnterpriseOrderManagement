@@ -1,3 +1,4 @@
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using OrderProcessing.API.Features.Orders;
 
@@ -11,6 +12,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     {
         base.OnModelCreating(modelBuilder);
 
+        // Adds MassTransit Outbox tables to EF Core model
+        modelBuilder.AddTransactionalOutboxEntities();
+        
         modelBuilder.Entity<Order>(entity =>
         {
             entity.HasKey(o => o.Id);

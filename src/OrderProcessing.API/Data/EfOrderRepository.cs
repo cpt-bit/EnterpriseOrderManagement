@@ -18,7 +18,15 @@ public class EfOrderRepository(AppDbContext context) : IOrderRepository
     
     public async Task SaveAsync(Order order)
     {
-        context.Orders.Update(order);
+        if (order.Id == 0)
+        {
+            await context.Orders.AddAsync(order);
+        }
+        else
+        {
+            context.Orders.Update(order);
+        }
+        
         await context.SaveChangesAsync();
     }
 }

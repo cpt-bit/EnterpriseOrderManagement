@@ -1,0 +1,17 @@
+﻿services:
+  orderprocessing.api:
+    image: orderprocessing.api
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: orderprocessing-rabbitmq
+    ports:
+      - "5672:5672"   # AMQP messaging port
+      - "15672:15672" # Web Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+

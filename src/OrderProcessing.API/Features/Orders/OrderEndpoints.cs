@@ -1,3 +1,6 @@
+using MassTransit;
+using OrderProcessing.API.Data;
+
 namespace OrderProcessing.API.Features.Orders;
 
 public static class OrderEndpoints
@@ -6,6 +9,32 @@ public static class OrderEndpoints
     {
         var ordersGroup = app.MapGroup("/api/orders");
 
+        ordersGroup.MapPost("/", async (
+            CreateOrderRequest request,
+            IOrderRepository repository,
+            AppDbContext dbContext,
+            IPublishEndpoint publishEndpoint) =>
+        {
+            // 1. Create order entity with Id = 0 (SQLite auto-increments this)
+            var order = new Order(0, request.CustomerName, request.Amount);
+
+            // 2. Persist to SQLite database
+            await repository.SaveAsync(order);
+
+            // 3. Publish event to Outbox change tracker
+            await publishEndpoint.Publish(new OrderCreatedEvent(
+                order.Id,
+                order.CustomerName,
+                order.Amount,
+                DateTime.UtcNow
+            ));
+
+            // 4. Persist the staged outbox message to SQLite
+            await dbContext.SaveChangesAsync();
+
+            return Results.Created($"/api/orders/{order.Id}", order);
+        });
+        
         ordersGroup.MapGet("/{id:int}", async (int id, OrderProcessor processor) =>
         {
             var order = await processor.ProcessOrderAsync(id);

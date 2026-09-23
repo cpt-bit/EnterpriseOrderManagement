@@ -1,10 +1,13 @@
+using MassTransit;
 using OrderProcessing.API.Data;
 using OrderProcessing.API.Extensions;
 using OrderProcessing.API.Features.Orders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddApplicationServices(builder.Configuration);
+// Register application & infrastructure services
+builder.Services.AddApplicationServices(builder.Configuration, builder.Environment);
+builder.Services.AddMessagingServices(builder.Configuration);
 
 var app = builder.Build();
 

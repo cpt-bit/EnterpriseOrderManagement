@@ -1,7 +1,0 @@
-﻿services:
-  orderprocessing.api:
-    image: orderprocessing.api
-    build:
-      context: .
-      dockerfile: Dockerfile
-
