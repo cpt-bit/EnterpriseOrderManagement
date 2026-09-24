@@ -26,3 +26,6 @@ workspace.xml
 ## OS generated files
 .DS_Store
 Thumbs.db
+
+## Copilot Workflow preferences
+.github/copilot-instructions.md

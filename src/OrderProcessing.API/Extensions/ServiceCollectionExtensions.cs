@@ -1,5 +1,6 @@
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using OrderProcessing.API.Data;
 using OrderProcessing.API.Features.Orders;
 
@@ -57,7 +58,7 @@ public static class ServiceCollectionExtensions
                 o.UseSqlite();
                 o.UseBusOutbox();
             });
-            
+
             x.UsingRabbitMq((context, cfg) =>
             {
                 var host = configuration["RabbitMQ:Host"] ?? "localhost";
@@ -74,6 +75,22 @@ public static class ServiceCollectionExtensions
                 cfg.ConfigureEndpoints(context);
             });
         });
+
+        return services;
+    }
+
+    public static IServiceCollection AddHealthCheckServices(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.AddHealthChecks()
+            .AddCheck("sqlite-database", () =>
+            {
+                using var context = services.BuildServiceProvider().GetRequiredService<AppDbContext>();
+                context.Database.OpenConnection();
+                context.Database.CloseConnection();
+                return HealthCheckResult.Healthy();
+            }, tags: ["ready"]);
 
         return services;
     }
