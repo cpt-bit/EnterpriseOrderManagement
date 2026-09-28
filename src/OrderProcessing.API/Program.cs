@@ -10,6 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices(builder.Configuration, builder.Environment);
 builder.Services.AddMessagingServices(builder.Configuration);
 builder.Services.AddHealthCheckServices(builder.Configuration);
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    // If the client sends properties not defined in the C# record/class, reject the request
+    options.SerializerOptions.UnmappedMemberHandling = System.Text.Json.Serialization.JsonUnmappedMemberHandling.Disallow;
+});
 
 var app = builder.Build();
 

@@ -102,4 +102,37 @@ public class OrderProcessorTests()
         // Verify SaveAsync received an Order object with Amount == €800
         await _repository.Received(1).SaveAsync(Arg.Is<Order>(o => o.Amount == 800m && o.Id == 1));
     }
+
+    [Fact]
+    public async Task DeleteOrderAsync_WhenOrderExists_DeletesAndReturnsTrue()
+    {
+        // Arrange
+        var existingOrder = new Order(1, "Acme Corp", 1000m);
+        _repository.GetByIdAsync(1).Returns(existingOrder);
+
+        var sut = new OrderProcessor(_repository, _logger);
+
+        // Act
+        var result = await sut.DeleteOrderAsync(1);
+
+        // Assert
+        result.Should().BeTrue();
+        await _repository.Received(1).DeleteAsync(1);
+    }
+
+    [Fact]
+    public async Task DeleteOrderAsync_WhenOrderDoesNotExist_ReturnsFalse()
+    {
+        // Arrange
+        _repository.GetByIdAsync(999).Returns((Order?)null);
+
+        var sut = new OrderProcessor(_repository, _logger);
+
+        // Act
+        var result = await sut.DeleteOrderAsync(999);
+
+        // Assert
+        result.Should().BeFalse();
+        await _repository.DidNotReceive().DeleteAsync(Arg.Any<int>());
+    }
 }

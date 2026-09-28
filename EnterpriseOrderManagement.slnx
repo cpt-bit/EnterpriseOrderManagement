@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/EnterpriseOrderManagement.AppHost/EnterpriseOrderManagement.AppHost.csproj" />
+    <Project Path="src/EnterpriseOrderManagement.ServiceDefaults/EnterpriseOrderManagement.ServiceDefaults.csproj" />
     <Project Path="src/OrderProcessing.API/OrderProcessing.API.csproj" />
   </Folder>
   <Folder Name="/tests/">

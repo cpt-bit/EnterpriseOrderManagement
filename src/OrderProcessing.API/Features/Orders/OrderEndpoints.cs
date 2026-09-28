@@ -1,5 +1,6 @@
 using MassTransit;
 using OrderProcessing.API.Data;
+using OrderProcessing.API.Middleware;
 
 namespace OrderProcessing.API.Features.Orders;
 
@@ -33,8 +34,10 @@ public static class OrderEndpoints
             await dbContext.SaveChangesAsync();
 
             return Results.Created($"/api/orders/{order.Id}", order);
-        });
-        
+        })
+            .AddEndpointFilter<ValidationFilter<CreateOrderRequest>>();
+
+
         ordersGroup.MapGet("/{id:int}", async (int id, OrderProcessor processor) =>
         {
             var order = await processor.ProcessOrderAsync(id);
@@ -62,6 +65,16 @@ public static class OrderEndpoints
                 return Results.BadRequest(ex.Message);
             }
         });
+
+        ordersGroup.MapDelete("/{id:int}", async (int id, OrderProcessor processor) =>
+        {
+            var success = await processor.DeleteOrderAsync(id);
+
+            return success
+                ? Results.NoContent() // 204 No Content on successful deletion
+                : Results.NotFound($"Order {id} not found.");
+        });
+
 
         return app;
     }

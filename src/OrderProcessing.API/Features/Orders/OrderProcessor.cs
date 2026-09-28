@@ -29,4 +29,18 @@ public class OrderProcessor(IOrderRepository repository, ILogger<OrderProcessor>
         await repository.SaveAsync(updatedOrder);
         return true;
     }
+
+    public async Task<bool> DeleteOrderAsync(int id)
+    {
+        var order = await repository.GetByIdAsync(id);
+        if (order is null)
+        {
+            logger.LogWarning("Order {OrderId} not found to delete", id);
+            return false;
+        }
+
+        await repository.DeleteAsync(id);
+        logger.LogInformation("Deleted order ID: {OrderId}", id);
+        return true;
+    }
 }

@@ -29,4 +29,13 @@ public class EfOrderRepository(AppDbContext context) : IOrderRepository
         
         await context.SaveChangesAsync();
     }
+    public async Task DeleteAsync(int id)
+    {
+        var order = await context.Orders.FindAsync(id);
+        if (order is not null)
+        {
+            context.Orders.Remove(order);
+            await context.SaveChangesAsync();
+        }
+    }
 }

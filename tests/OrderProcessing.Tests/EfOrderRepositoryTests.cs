@@ -101,6 +101,21 @@ public class EfOrderRepositoryTests : IDisposable
         savedOrder.Should().BeEquivalentTo(updatedOrder);
     }
 
+    [Fact]
+    public async Task DeleteAsync_WhenOrderExists_RemovesOrder()
+    {
+        // Arrange
+        await using var context = new AppDbContext(_options);
+        var sut = new EfOrderRepository(context);
+
+        // Act
+        await sut.DeleteAsync(1);
+
+        // Assert
+        var deletedOrder = await context.Orders.FindAsync(1);
+        deletedOrder.Should().BeNull();
+    }
+
     public void Dispose()
     {
         _connection.Dispose();

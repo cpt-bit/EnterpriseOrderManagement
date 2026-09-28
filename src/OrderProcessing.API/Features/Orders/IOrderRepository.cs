@@ -5,4 +5,5 @@ public interface IOrderRepository
     Task<Order?> GetByIdAsync(int id);
     Task<IEnumerable<Order>> GetAllAsync();
     Task SaveAsync(Order order);
+    Task DeleteAsync(int id);
 }
