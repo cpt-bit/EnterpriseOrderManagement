@@ -29,3 +29,11 @@ Thumbs.db
 
 ## Copilot Workflow preferences
 .github/copilot-instructions.md
+
+# SQLite Databases & Runtime State
+*.db
+*.db-shm
+*.db-wal
+**/App_Data/*.db
+**/App_Data/*.db-shm
+**/App_Data/*.db-wal
