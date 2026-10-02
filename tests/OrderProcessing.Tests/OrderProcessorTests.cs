@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 using OrderProcessing.API.Features.Orders;
-using Xunit;
 
 namespace OrderProcessing.Tests;
 
@@ -27,7 +26,7 @@ public class OrderProcessorTests()
         // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(expectedOrder);
-        
+
         // Verify repository interaction
         await _repository.Received(1).GetByIdAsync(1);
     }
@@ -47,6 +46,7 @@ public class OrderProcessorTests()
         result.Should().BeNull();
         await _repository.Received(1).GetByIdAsync(999);
     }
+
     [Fact]
     public async Task ProcessOrderAsync_WhenRepositoryThrows_PropagatesException()
     {
@@ -64,7 +64,7 @@ public class OrderProcessorTests()
             .ThrowAsync<InvalidOperationException>()
             .WithMessage("Database connection failed");
     }
-    
+
     [Fact]
     public async Task ProcessOrderAsync_WhenOrderNotFound_LogsWarning()
     {
@@ -84,6 +84,26 @@ public class OrderProcessorTests()
             Arg.Any<Exception>(),
             Arg.Any<Func<object, Exception?, string>>());
     }
+
+    [Fact]
+    public async Task ProcessOrderAsync_WhenCancelled_ThrowsOperationCanceledException()
+    {
+        // Arrange
+        using var cts = new CancellationTokenSource();
+        cts.Cancel();
+
+        _repository.GetByIdAsync(1, cts.Token)
+            .ThrowsAsync(new OperationCanceledException());
+
+        var sut = new OrderProcessor(_repository, _logger);
+
+        // Act
+        Func<Task> act = async () => await sut.ProcessOrderAsync(1, cts.Token);
+
+        // Assert
+        await act.Should().ThrowAsync<OperationCanceledException>();
+    }
+
     [Fact]
     public async Task ApplyDiscountAsync_WhenOrderExists_CalculatesDiscountAndSaves()
     {

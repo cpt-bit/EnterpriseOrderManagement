@@ -63,6 +63,23 @@ public class EfOrderRepositoryTests : IDisposable
     }
 
     [Fact]
+    public async Task GetByIdAsync_WhenCancelled_ThrowsOperationCanceledException()
+    {
+        // Arrange
+        await using var context = new AppDbContext(_options);
+        var sut = new EfOrderRepository(context);
+
+        using var cts = new CancellationTokenSource();
+        cts.Cancel();
+
+        // Act
+        Func<Task> act = async () => await sut.GetByIdAsync(1, cts.Token);
+
+        // Assert
+        await act.Should().ThrowAsync<OperationCanceledException>();
+    }
+
+    [Fact]
     public async Task GetAllAsync_ReturnsAllSeededOrders()
     {
         // Arrange
